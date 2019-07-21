@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>DRUM KIT</title>
+</head>
+
+<body>
+    <div class = "keys">
+        <div data-key = "65" class = "key">
+            <kbd>A</kbd>
+            <br><span>CLAP</span>
+        </div>
+        <div data-key = "83" class = "key">
+            <kbd>S</kbd>
+            <br><span>HI-HAT</span>
+        </div>
+        <div data-key = "68" class = "key" >
+            <kbd>D</kbd>
+            <br><span>KICK</span>
+        </div>
+        <div  data-key = "70" class = "key">
+            <kbd>F</kbd>
+            <br><span>OPENHAT</span>
+        </div>
+        <div  data-key = "71" class = "key">
+            <kbd>G</kbd>
+            <br><span>BOOM</span>
+        </div>
+        <div  data-key = "72" class = "key">
+            <kbd>H</kbd>
+            <br><span>RIDE</span>
+        </div>
+        <div  data-key = "74" class = "key">
+            <kbd>J</kbd>
+            <br><span>SNARE</span>
+        </div>
+        <div data-key = "75" class = "key">
+            <kbd>K</kbd>
+            <br><span>TOM</span>
+        </div>
+        <div data-key = "76" class = "key">
+            <kbd>L</kbd>
+            <br><span>TIM</span>
+        </div>
+    </div>
+
+<audio data-key = "65" src = "sounds/clap.wav"> </audio>
+<audio data-key = "83" src = "sounds/NTS-TUD-PERCUSSION-0009.wav"> </audio>
+<audio data-key = "68" src = "sounds/NTS-TUD-PERCUSSION-0010.wav"> </audio>
+<audio data-key = "70" src = "sounds/NTS-TUD-PERCUSSION-0011.wav"> </audio>
+<audio data-key = "71" src = "sounds/NTS-TUD-PERCUSSION-0012.wav"> </audio>
+<audio data-key = "72" src = "sounds/NTS-TUD-PERCUSSION-0013.wav"> </audio>
+<audio data-key = "74" src = "sounds/clap.wav"> </audio>
+<audio data-key = "75" src = "sounds/NTS-TUD-PERCUSSION-0007.wav"> </audio>
+<audio data-key = "76" src = "sounds/NTS-TUD-PERCUSSION-0012.wav"> </audio>
+
+<script>
+window.addEventListener ('keydown', (k) => {
+    const audio = document.querySelector(`audio[data-key ="${k.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key ="${k.keyCode}"]`)
+    if (!audio) return;
+    audio.currentTime = 0; // rewind to the start
+    audio.play();
+    key.classList.add("playing");
+    
+  
+});
+</script>
+
+</body>
+
+</html>

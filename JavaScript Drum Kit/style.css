@@ -1,0 +1,40 @@
+body{
+    background-image: url(guitar.jpg);
+    background-size: cover;
+    background-position-y: 25%;
+    background-repeat: no-repeat;
+    
+}
+
+.keys{
+    margin-top: 15%;
+    text-align: center;
+}
+
+span{
+    color: orange;
+    font-size: 10px;
+}
+
+.key{
+    color: white;
+    background: (0,0,0,0.4);
+    transition: all 0.05s;
+    text-shadow: 0 0 10px black;
+    font-size: 1.5rem;
+    display: inline-block;
+    line-height: auto;
+    text-align: center;
+    margin: 1rem;
+    padding: 1%;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.playing{
+    transform: scale(1.1);
+    border-color: orange;
+    text-shadow: 0 0 10px orange;
+}
+
